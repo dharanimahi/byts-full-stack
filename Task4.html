@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELSIUS</title>
+   <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAzgS2rfKb2IXNdUOAwcZaOqLyQ8VOAymRw&s">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: rgb(144, 189, 189);">
+ <header><center>
+    <img class ="landing" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToW2JO1BlQy2Oyg60hRw2qyGECYjpXQq0iFQ&s"alt="image not found" height="50px"width="50px">
+    <h1>Farenheit to celsius</h1></center>
+</header><center>
+<input id="f" type="number" placeholder="Enter °F">
+<button class="btn" onclick="convert()">Convert</button>
+
+<p id="c"></p></center>
+
+<script>
+function convert() {
+  var f = document.getElementById("f").value;
+  var c = (f - 32) * 5 / 9;
+
+  if (f != "") {
+    // Manual rounding to 2 decimal places
+    var rounded = ((parseInt(c * 100)) / 100);
+    document.getElementById("c").innerText = "Celsius: " + rounded + " °C";
+  }
+}
+</script>
+
+</body>
+</html>

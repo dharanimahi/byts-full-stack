@@ -1,0 +1,47 @@
+head{
+    margin: 0px;
+
+}header{    
+    position: sticky;
+    top:0px;
+    background-color: rgb(107, 101, 137);
+    list-style-type: none;
+    padding: 0px;  
+}
+.landing{
+    padding-top: 6px;
+}
+.btn{
+    height: 40px;
+    width: 65px;
+    border-radius: 6px;
+    text-align: center;
+    font-family: monospace;
+    
+}
+
+.active{
+    text-decoration: white;
+    display: flex;
+}
+
+ul{
+    margin: 0px;
+    display: flex;
+   
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+li{
+    text-transform: capitalize;
+    list-style-type: none;
+    padding: 20px;
+    
+}
+body{
+    background-color:rgb(144, 189, 189);
+    margin: 0px;
+    
+}

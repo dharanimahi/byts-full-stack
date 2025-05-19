@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOPWATCH</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/16/16235.png" type="image/x-icon">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><center>
+    <img class ="landing" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToW2JO1BlQy2Oyg60hRw2qyGECYjpXQq0iFQ&s"alt="image not found" height="50px"width="50px">
+    <h1>Stopwatch</h1></center>
+</header><center>
+    <button class="btn" onclick="start()">start</button>
+<button class="btn" onclick="stop()">stop</button>
+<button class="btn" onclick="reset()">reset</button>
+</body>
+<p id="count"></p></center>
+
+<script>
+    let count =0;
+    let intervalId;
+    function start(){
+        console.log("start");
+         intervalId=setInterval(() => {
+          document.getElementById("count").innerText=++count;
+    }, 1000);
+    }
+    function stop(){
+        console.log("stop");
+        clearInterval(intervalId);
+        intervalId = null;
+    
+    }
+     function reset(){
+        console.log("reset");
+        clearInterval(intervalId);
+        count=0;
+            document.getElementById("count").innerText=count;
+         
+    } 
+
+</script>
+</html>

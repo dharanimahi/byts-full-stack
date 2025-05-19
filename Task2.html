@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CALCULATOR</title>
+  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhxfER4kG-uZIWGpUJKhEhTarUNQYmOSeIFw&s" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, rgb(144, 189, 189));
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #ccc;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: inline;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 16px;
+      border: 2px solid white;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background-color: white;
+      color: #2c3e50;
+    }
+
+    .margin {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .parent {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      grid-gap: 15px;
+      justify-content: center;
+      /* margin-top: 20px; */
+      padding: 20px;
+      /* background-color: rgba(255, 255, 255, 0.1); */
+      border-radius: 12px;
+      /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); */
+    }
+
+    button {
+      font-size: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      background-color: rgb(107, 101, 137);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: rgb(107, 101, 137);
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(107, 101, 137);
+    }
+
+    h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+    <header> <center>
+    <img class ="landing" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToW2JO1BlQy2Oyg60hRw2qyGECYjpXQq0iFQ&s"alt="image not found" height="50px"width="50px">
+    <h1>Calculator</h1></center>
+</header>
+
+    <div class="parent">
+      <button onclick="RemoveLast()">←</button>
+      <button onclick="Update('%')">%</button>
+      <button onclick="equ=''; UpdateScreen()">C</button>
+
+      <button onclick="Update('1')">1</button>
+      <button onclick="Update('2')">2</button>
+      <button onclick="Update('3')">3</button>
+
+      <button onclick="Update('4')">4</button>
+      <button onclick="Update('5')">5</button>
+      <button onclick="Update('6')">6</button>
+
+      <button onclick="Update('7')">7</button>
+      <button onclick="Update('8')">8</button>
+      <button onclick="Update('9')">9</button>
+
+      <button onclick="Update('+')">+</button>
+      <button onclick="Update('0')">0</button>
+      <button onclick="answer()">=</button>
+
+      <button onclick="Update('-')">-</button>
+      <button onclick="Update('*')">*</button>
+      <button onclick="Update('/')">/</button>
+    </div>
+
+    <p id="output" style="text-align: center;"></p>
+  </div>
+
+  <script>
+    let equ = "";
+    function UpdateScreen() {
+      document.getElementById("output").innerText = equ;
+    }
+    function Update(x) {
+      equ += x;
+      UpdateScreen();
+    }
+    function RemoveLast() {
+      equ = equ.slice(0, -1);
+      UpdateScreen();
+    }
+    function answer() {
+      try {
+        const result = eval(equ);
+        equ = result.toString();
+        UpdateScreen();
+      } catch {
+        alert("Invalid equation");
+        equ = "";
+        UpdateScreen();
+      }
+    }
+  </script>
+</body>
+</html>
